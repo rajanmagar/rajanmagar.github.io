@@ -1,10 +1,14 @@
 // custom request
-const request = new Request('http://www.omdbapi.com/?apikey=fda77f56&s=avengers', {
+const request = (name) =>
+  new Request(`http://www.omdbapi.com/?apikey=fda77f56&s=${name}`, {
     method: 'GET',
     mode: 'cors',
-    cache: 'default'
-})
+    cache: 'default',
+  });
 // helper function
-const getMovies = async () => await (await fetch(request)).json()
+const getMovies = async (search) => await (await fetch(request(search))).json();
 
-getMovies()
+const input = document.querySelector('input');
+input.addEventListener('input', (event) => {
+  getMovies(event.target.value);
+});
