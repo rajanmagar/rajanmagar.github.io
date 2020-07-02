@@ -7,4 +7,45 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+
+body .container .autocomplete .input {
+  position: relative;
+}
+
+body .container .autocomplete .movies {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 10rem;
+  list-style: none;
+  -webkit-box-shadow: -10px -10px 30px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px 4px rgba(45, 78, 255, 0.15);
+          box-shadow: -10px -10px 30px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px 4px rgba(45, 78, 255, 0.15);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+body .container .autocomplete .movies .movie:hover {
+  background-color: #ecf0f3;
+}
+
+body .container .autocomplete .movies .movie img {
+  padding: 0.5em 1em;
+  height: 80px;
+}
+
+body .container .autocomplete .movies .movie p {
+  padding: 0 1em;
+}
+
+body .container .autocomplete .is-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .container .autocomplete .is-hidden {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
