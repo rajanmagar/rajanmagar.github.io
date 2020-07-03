@@ -12,56 +12,34 @@ const requestMovie = (name) =>
     cache: 'default',
   });
 // helper function
-const getMovies = async (search) => {
-  const response = await (await fetch(request(search))).json();
-  if (response.Error) {
-    return [];
-  }
-  return response.Search;
-};
 
-const root = document.querySelector('.autocomplete');
-root.innerHTML = `
-  <label><b>Search For A Movie</b></label>
-  <input type="text" class="input" />
-  <ul class="movies"></ul>
-`;
-
-const input = document.querySelector('input');
-const dropdown = document.querySelector('.movies');
-const resultWrapper = document.querySelector('.results');
-
-const onInput = async (event) => {
-  const movies = await getMovies(event.target.value);
-  dropdown.innerHTML = '';
-  dropdown.classList.remove('is-hidden');
-  for (let movie of movies) {
-    const options = document.createElement('li');
+createAutoComplete({
+  root: document.querySelector('.autocomplete'),
+  renderOption(movie) {
     const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
-    options.classList.add('movie');
-    options.innerHTML = `
+    return `
       <img src="${imgSrc}" alt="${movie.Title}" />
-      <p>${movie.Title}</p>
+      <p>${movie.Title} (${movie.Year})</p>
     `;
-    options.addEventListener('click', () => {
-      dropdown.classList.add('is-hidden');
-      input.value = movie.Title;
-      onMovieSelect(movie);
-    });
-    dropdown.appendChild(options);
-  }
-};
-input.addEventListener('input', debounce(onInput, 1000));
-
-document.addEventListener('click', (event) => {
-  if (!root.contains(event.target)) {
-    dropdown.classList.add('is-hidden');
-  }
+  },
+  onSelect(movie) {
+    onMovieSelect(movie);
+  },
+  inputValue(movie) {
+    return movie.Title;
+  },
+  async getItems(search) {
+    const response = await (await fetch(request(search))).json();
+    if (response.Error) {
+      return [];
+    }
+    return response.Search;
+  },
 });
 
 const onMovieSelect = async (movie) => {
   const response = await (await fetch(requestMovie(movie.imdbID))).json();
-  document.querySelector('#summary').innerHTML = movieTemplate(response);
+  document.querySelector('.summary').innerHTML = movieTemplate(response);
 };
 
 const movieTemplate = (detail) => {

@@ -21,34 +21,71 @@ body section {
       grid-template-columns: 1fr 1fr;
 }
 
-body .container .autocomplete .input {
-  position: relative;
+body .container .autocomplete {
+  padding: 0 2rem;
 }
 
-body .container .autocomplete .movies {
+body .container .autocomplete .input {
+  width: 70%;
+  position: relative;
+  padding: 0.9rem;
+  border-radius: 4px;
+  font: inherit;
+  border: unset;
+  border-radius: 50px;
+  background: #e40a15;
+  -webkit-box-shadow: inset 20px 20px 50px #c20912, inset -20px -20px 40px #ff0c18;
+          box-shadow: inset 20px 20px 50px #c20912, inset -20px -20px 40px #ff0c18;
+}
+
+body .container .autocomplete .input::-webkit-input-placeholder {
+  color: black;
+}
+
+body .container .autocomplete .input:-ms-input-placeholder {
+  color: black;
+}
+
+body .container .autocomplete .input::-ms-input-placeholder {
+  color: black;
+}
+
+body .container .autocomplete .input::placeholder {
+  color: black;
+}
+
+body .container .autocomplete .items {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  left: 10rem;
+  left: 4rem;
   list-style: none;
-  -webkit-box-shadow: -10px -10px 30px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px 4px rgba(45, 78, 255, 0.15);
-          box-shadow: -10px -10px 30px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px 4px rgba(45, 78, 255, 0.15);
+  border: 1px solid #ff000f;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
 
-body .container .autocomplete .movies .movie:hover {
+body .container .autocomplete .items .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .autocomplete .items .item:hover {
   background-color: #ecf0f3;
 }
 
-body .container .autocomplete .movies .movie img {
+body .container .autocomplete .items .item img {
   padding: 0.5em 1em;
   height: 80px;
 }
 
-body .container .autocomplete .movies .movie p {
+body .container .autocomplete .items .item p {
   padding: 0 1em;
 }
 
@@ -62,23 +99,26 @@ body .container .autocomplete .is-hidden {
   display: none;
 }
 
-body .container .media {
+body .container .summary {
+  padding: 2rem;
+}
+
+body .container .summary .media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 2rem;
-  margin: 1rem;
   border-radius: 11px;
   background: #e40a15;
   -webkit-box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
           box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
 }
 
-body .container .media .media-left img {
+body .container .summary .media .media-left img {
   width: 100%;
 }
 
-body .container .media .media-content {
+body .container .summary .media .media-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,29 +131,29 @@ body .container .media .media-content {
           justify-content: center;
 }
 
-body .container .media .media-content .content {
+body .container .summary .media .media-content .content {
   padding: 1rem;
 }
 
-body .container .media .media-content .content h1 {
+body .container .summary .media .media-content .content h1 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
-body .container .media .media-content .content h4 {
+body .container .summary .media .media-content .content h4 {
   margin-bottom: 1rem;
 }
 
-body .container .notification {
+body .container .summary .notification {
   margin: 2rem;
 }
 
-body .container .notification .title {
+body .container .summary .notification .title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-body .container .notification .subtitle {
+body .container .summary .notification .subtitle {
   display: inline;
   font-size: 0.7rem;
   color: white;
