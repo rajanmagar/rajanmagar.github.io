@@ -19,15 +19,18 @@ body section {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
+  text-align: center;
 }
 
-body .container .autocomplete {
+body .container .left-autocomplete,
+body .container .right-autocomplete {
   padding: 0 2rem;
+  position: relative;
 }
 
-body .container .autocomplete .input {
+body .container .left-autocomplete .input,
+body .container .right-autocomplete .input {
   width: 70%;
-  position: relative;
   padding: 0.9rem;
   border-radius: 4px;
   font: inherit;
@@ -38,36 +41,42 @@ body .container .autocomplete .input {
           box-shadow: inset 20px 20px 50px #c20912, inset -20px -20px 40px #ff0c18;
 }
 
-body .container .autocomplete .input::-webkit-input-placeholder {
+body .container .left-autocomplete .input::-webkit-input-placeholder,
+body .container .right-autocomplete .input::-webkit-input-placeholder {
   color: black;
 }
 
-body .container .autocomplete .input:-ms-input-placeholder {
+body .container .left-autocomplete .input:-ms-input-placeholder,
+body .container .right-autocomplete .input:-ms-input-placeholder {
   color: black;
 }
 
-body .container .autocomplete .input::-ms-input-placeholder {
+body .container .left-autocomplete .input::-ms-input-placeholder,
+body .container .right-autocomplete .input::-ms-input-placeholder {
   color: black;
 }
 
-body .container .autocomplete .input::placeholder {
+body .container .left-autocomplete .input::placeholder,
+body .container .right-autocomplete .input::placeholder {
   color: black;
 }
 
-body .container .autocomplete .items {
+body .container .left-autocomplete .items,
+body .container .right-autocomplete .items {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  left: 4rem;
   list-style: none;
   border: 1px solid #ff000f;
+  background-color: #e40a17;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
 
-body .container .autocomplete .items .item {
+body .container .left-autocomplete .items .item,
+body .container .right-autocomplete .items .item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,34 +85,41 @@ body .container .autocomplete .items .item {
           align-items: center;
 }
 
-body .container .autocomplete .items .item:hover {
+body .container .left-autocomplete .items .item:hover,
+body .container .right-autocomplete .items .item:hover {
   background-color: #ecf0f3;
 }
 
-body .container .autocomplete .items .item img {
+body .container .left-autocomplete .items .item img,
+body .container .right-autocomplete .items .item img {
   padding: 0.5em 1em;
   height: 80px;
 }
 
-body .container .autocomplete .items .item p {
+body .container .left-autocomplete .items .item p,
+body .container .right-autocomplete .items .item p {
   padding: 0 1em;
 }
 
-body .container .autocomplete .is-open {
+body .container .left-autocomplete .is-open,
+body .container .right-autocomplete .is-open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-body .container .autocomplete .is-hidden {
+body .container .left-autocomplete .is-hidden,
+body .container .right-autocomplete .is-hidden {
   display: none;
 }
 
-body .container .summary {
+body .container .left-summary,
+body .container .right-summary {
   padding: 2rem;
 }
 
-body .container .summary .media {
+body .container .left-summary .media,
+body .container .right-summary .media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,11 +130,13 @@ body .container .summary .media {
           box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
 }
 
-body .container .summary .media .media-left img {
+body .container .left-summary .media .media-left img,
+body .container .right-summary .media .media-left img {
   width: 100%;
 }
 
-body .container .summary .media .media-content {
+body .container .left-summary .media .media-content,
+body .container .right-summary .media .media-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,34 +149,75 @@ body .container .summary .media .media-content {
           justify-content: center;
 }
 
-body .container .summary .media .media-content .content {
-  padding: 1rem;
+body .container .left-summary .media .media-content .content,
+body .container .right-summary .media .media-content .content {
+  padding: 0 1rem;
+  text-align: start;
 }
 
-body .container .summary .media .media-content .content h1 {
+body .container .left-summary .media .media-content .content h1,
+body .container .right-summary .media .media-content .content h1 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
-body .container .summary .media .media-content .content h4 {
+body .container .left-summary .media .media-content .content h4,
+body .container .right-summary .media .media-content .content h4 {
   margin-bottom: 1rem;
 }
 
-body .container .summary .notification {
-  margin: 2rem;
+body .container .left-summary .notification,
+body .container .right-summary .notification {
+  margin: 2rem 0;
+  padding: 1rem;
+  text-align: start;
+  border-radius: 11px;
+  background: #e40a12;
+  -webkit-box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
+          box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
 }
 
-body .container .summary .notification .title {
+body .container .left-summary .notification .title,
+body .container .right-summary .notification .title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-body .container .summary .notification .subtitle {
+body .container .left-summary .notification .subtitle,
+body .container .right-summary .notification .subtitle {
   display: inline;
   font-size: 0.7rem;
   color: white;
   background-color: black;
   padding: 0.3rem 1rem;
   border-radius: 7px;
+}
+
+body .container .left-autocomplete .items {
+  left: 8.5rem;
+}
+
+body .guide {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 2rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 11px;
+  background: #e40a12;
+  -webkit-box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
+          box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
+}
+
+body .guide h1 {
+  margin-bottom: 1rem;
+}
+
+body .is-hidden {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

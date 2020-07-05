@@ -13,17 +13,13 @@ const requestMovie = (name) =>
   });
 // helper function
 
-createAutoComplete({
-  root: document.querySelector('.autocomplete'),
+const autoCompleteConfig = {
   renderOption(movie) {
     const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
     return `
       <img src="${imgSrc}" alt="${movie.Title}" />
       <p>${movie.Title} (${movie.Year})</p>
     `;
-  },
-  onSelect(movie) {
-    onMovieSelect(movie);
   },
   inputValue(movie) {
     return movie.Title;
@@ -35,12 +31,38 @@ createAutoComplete({
     }
     return response.Search;
   },
+};
+
+createAutoComplete({
+  ...autoCompleteConfig,
+  root: document.querySelector('.left-autocomplete'),
+  onSelect(movie) {
+    document.querySelector('.guide').classList.add('is-hidden');
+    onMovieSelect(movie, document.querySelector('.left-summary'), 'left');
+  },
 });
 
-const onMovieSelect = async (movie) => {
+createAutoComplete({
+  ...autoCompleteConfig,
+  root: document.querySelector('.right-autocomplete'),
+  onSelect(movie) {
+    document.querySelector('.guide').classList.add('is-hidden');
+    onMovieSelect(movie, document.querySelector('.right-summary'), 'right');
+  },
+});
+
+let leftMovie;
+let rightMovie;
+const onMovieSelect = async (movie, target, side) => {
   const response = await (await fetch(requestMovie(movie.imdbID))).json();
-  document.querySelector('.summary').innerHTML = movieTemplate(response);
+  target.innerHTML = movieTemplate(response);
+  side === 'left' ? (leftMovie = response) : (rightMovie = response);
+  if (leftMovie && rightMovie) {
+    runComparison();
+  }
 };
+
+const runComparison = () => {};
 
 const movieTemplate = (detail) => {
   return `
