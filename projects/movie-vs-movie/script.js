@@ -1,12 +1,12 @@
 // custom request
 const request = (name) =>
-  new Request(`http://www.omdbapi.com/?apikey=fda77f56&s=${name}`, {
+  new Request(`https://www.omdbapi.com/?apikey=fda77f56&s=${name}`, {
     method: 'GET',
     mode: 'cors',
     cache: 'default',
   });
 const requestMovie = (name) =>
-  new Request(`http://www.omdbapi.com/?apikey=fda77f56&i=${name}`, {
+  new Request(`https://www.omdbapi.com/?apikey=fda77f56&i=${name}`, {
     method: 'GET',
     mode: 'cors',
     cache: 'default',
@@ -62,9 +62,37 @@ const onMovieSelect = async (movie, target, side) => {
   }
 };
 
-const runComparison = () => {};
+const runComparison = () => {
+  const leftStat = document.querySelectorAll('.left-summary .notification');
+  const rightStat = document.querySelectorAll('.right-summary .notification');
+  console.log('run comparison', leftStat);
+  leftStat.forEach((leftItem, index) => {
+    const rightItem = rightStat[index];
+    const left = parseInt(leftItem.dataset.value);
+    const right = parseInt(rightItem.dataset.value);
+    if (right > left) {
+      leftItem.classList.add('winner');
+    } else {
+      rightItem.classList.add('winner');
+    }
+  });
+};
 
 const movieTemplate = (detail) => {
+  const dollar = parseInt(
+    detail.BoxOffice.replace(/\$/g, '').replace(/,/g, '')
+  );
+  const metascore = parseInt(detail.Metascore);
+  const imdbRating = parseInt(detail.imdbRating);
+  const imdbVotes = parseInt(detail.imdbVotes.replace(/,/g, ''));
+  const awards = detail.Awards.split(' ').reduce((prev, curr) => {
+    const value = parseInt(curr);
+    if (isNaN(value)) {
+      return prev;
+    } else {
+      return prev + curr;
+    }
+  }, 0);
   return `
     <article class="media">
       <figure class="media-left">
@@ -80,23 +108,23 @@ const movieTemplate = (detail) => {
         </div>
       </div>
     </article>
-    <article class="notification">
+    <article data-value=${awards} class="notification">
       <p class="title">${detail.Awards}</p>
       <p class="subtitle">Awards</p>
     </article>
-    <article class="notification">
+    <article data-value=${dollar} class="notification">
       <p class="title">${detail.BoxOffice}</p>
       <p class="subtitle">Box office</p>
     </article>
-    <article class="notification">
+    <article data-value=${metascore} class="notification">
       <p class="title">${detail.Metascore}</p>
       <p class="subtitle">Metascore</p>
     </article>
-    <article class="notification">
+    <article data-value=${imdbRating} class="notification">
       <p class="title">${detail.imdbRating}</p>
       <p class="subtitle">IMDB Rating</p>
     </article>
-    <article class="notification">
+    <article data-value=${imdbVotes} class="notification">
       <p class="title">${detail.imdbVotes}</p>
       <p class="subtitle">IMDB Votes</p>
     </article>

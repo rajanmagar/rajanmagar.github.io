@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 * {
   margin: 0;
@@ -61,12 +62,18 @@ body .container .right-autocomplete .input::placeholder {
   color: black;
 }
 
+body .container .left-autocomplete .input:focus,
+body .container .right-autocomplete .input:focus {
+  outline: none;
+}
+
 body .container .left-autocomplete .items,
 body .container .right-autocomplete .items {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
+  right: 160px;
   list-style: none;
   border: 1px solid #ff000f;
   background-color: #e40a17;
@@ -128,6 +135,7 @@ body .container .right-summary .media {
   background: #e40a15;
   -webkit-box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
           box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+  max-height: 400px;
 }
 
 body .container .left-summary .media .media-left img,
@@ -191,6 +199,11 @@ body .container .right-summary .notification .subtitle {
   background-color: black;
   padding: 0.3rem 1rem;
   border-radius: 7px;
+}
+
+body .container .left-summary .winner::before,
+body .container .right-summary .winner::before {
+  content: "🏆";
 }
 
 body .container .left-autocomplete .items {

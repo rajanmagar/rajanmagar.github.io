@@ -32,10 +32,14 @@ body {
                 &::placeholder {
                     color: black;
                 }
+                &:focus {
+                    outline: none;
+                }
             }
             .items {
                 align-items: center;
                 position: absolute;
+                right: 160px;
                 list-style: none;
                 border: 1px solid #ff000f;
                 background-color: #e40a17;
@@ -71,6 +75,7 @@ body {
                 border-radius: 11px;
                 background: #e40a15;
                 box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+                max-height: 400px;
                 .media-left {
                     img {
                         width: 100%;
@@ -112,6 +117,11 @@ body {
                     background-color: black;
                     padding: 0.3rem 1rem;
                     border-radius: 7px;
+                }
+            }
+            .winner {
+                &::before {
+                    content: "🏆";
                 }
             }
         }
