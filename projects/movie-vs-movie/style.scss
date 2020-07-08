@@ -1,148 +1,193 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
-    font-family: "Montserrat", sans-serif;
-    height: 100vh;
-    background-color: #e40a15;
-    header {
-        padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  background-color: #e40a15;
+  position: relative;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  header {
+    padding: 2rem;
+    h1 {
+      font-family: 'Monoton', cursive;
+      font-size: 2rem;
+      line-height: 111px;
+      text-align: center;
+      color: black;
+      width: 110px;
+      height: 110px;
+      margin: auto;
+      border-radius: 50%;
+      background: #e40a15;
+      box-shadow: inset 20px 20px 60px #c20912, inset -20px -20px 60px #ff0c18;
     }
-    section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        text-align: center;
-    }
-    .container {
-        .left-autocomplete,
-        .right-autocomplete {
-            padding: 0 2rem;
-            position: relative;
-            .input {
-                width: 70%;
-                padding: 0.9rem;
-                border-radius: 4px;
-                font: inherit;
-                border: unset;
-                border-radius: 50px;
-                background: #e40a15;
-                box-shadow: inset 20px 20px 50px #c20912, inset -20px -20px 40px #ff0c18;
-                &::placeholder {
-                    color: black;
-                }
-                &:focus {
-                    outline: none;
-                }
-            }
-            .items {
-                align-items: center;
-                position: absolute;
-                right: 160px;
-                list-style: none;
-                border: 1px solid #ff000f;
-                background-color: #e40a17;
-                width: max-content;
-                .item {
-                    display: flex;
-                    align-items: center;
-                    &:hover {
-                        background-color: #ecf0f3;
-                    }
-                    img {
-                        padding: 0.5em 1em;
-                        height: 80px;
-                    }
-                    p {
-                        padding: 0 1em;
-                    }
-                }
-            }
-            .is-open {
-                display: flex;
-            }
-            .is-hidden {
-                display: none;
-            }
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+  .container {
+    .left-autocomplete,
+    .right-autocomplete {
+      padding: 0 2rem;
+      position: relative;
+      .input {
+        width: 70%;
+        padding: 0.9rem;
+        border-radius: 4px;
+        font: inherit;
+        border: unset;
+        border-radius: 50px;
+        background: #e40a15;
+        box-shadow: inset 20px 20px 50px #c20912, inset -20px -20px 40px #ff0c18;
+        &::placeholder {
+          color: black;
         }
-        .left-summary,
-        .right-summary {
-            padding: 2rem;
-            .media {
-                display: flex;
-                padding: 2rem;
-                border-radius: 11px;
-                background: #e40a15;
-                box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
-                max-height: 400px;
-                .media-left {
-                    img {
-                        width: 100%;
-                    }
-                }
-                .media-content {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    .content {
-                        padding: 0 1rem;
-                        text-align: start;
-                        h1 {
-                            margin-bottom: 1rem;
-                            font-size: 1.5rem;
-                        }
-                        h4 {
-                            margin-bottom: 1rem;
-                        }
-                    }
-                }
-            }
-            .notification {
-                margin: 2rem 0;
-                padding: 1rem;
-                text-align: start;
-                border-radius: 11px;
-                background: #e40a12;
-                box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
-
-                .title {
-                    font-size: 1.5rem;
-                    margin-bottom: 0.5rem;
-                }
-                .subtitle {
-                    display: inline;
-                    font-size: 0.7rem;
-                    color: white;
-                    background-color: black;
-                    padding: 0.3rem 1rem;
-                    border-radius: 7px;
-                }
-            }
-            .winner {
-                &::before {
-                    content: "🏆";
-                }
-            }
+        &:focus {
+          outline: none;
         }
-        .left-autocomplete .items {
-            left: 8.5rem;
-        }
-    }
-    .guide {
-        grid-column: 1 / 3;
-        justify-self: center;
-        padding: 2rem;
+      }
+      .items {
+        align-items: center;
+        position: absolute;
+        right: 160px;
+        list-style: none;
+        border: 1px solid #ff000f;
+        background-color: #e40a17;
         width: max-content;
+        z-index: 2;
+        .item {
+          display: flex;
+          align-items: center;
+          &:hover {
+            background-color: #ecf0f3;
+          }
+          img {
+            padding: 0.5em 1em;
+            height: 80px;
+          }
+          p {
+            padding: 0 1em;
+          }
+        }
+      }
+      .is-open {
+        display: flex;
+      }
+      .is-hidden {
+        display: none;
+      }
+    }
+    .left-summary,
+    .right-summary {
+      padding: 2rem;
+      .media {
+        display: flex;
+        padding: 2rem;
+        border-radius: 11px;
+        background: #e40a15;
+        box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+        max-height: 400px;
+        .media-left {
+          img {
+            width: 100%;
+          }
+        }
+        .media-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .content {
+            padding: 0 1rem;
+            text-align: start;
+            h1 {
+              margin-bottom: 1rem;
+              font-size: 1.5rem;
+            }
+            h4 {
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+      .notification {
+        margin: 2rem 0;
+        padding: 1rem;
+        text-align: start;
         border-radius: 11px;
         background: #e40a12;
         box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
-        h1 {
-            margin-bottom: 1rem;
-        }
-    }
 
-    .is-hidden {
-        display: none;
+        .title {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+        .subtitle {
+          display: inline;
+          font-size: 0.7rem;
+          color: white;
+          background-color: black;
+          padding: 0.3rem 1rem;
+          border-radius: 7px;
+        }
+      }
+      .winner {
+        &::before {
+          content: '🏆';
+        }
+      }
     }
+    .left-autocomplete .items {
+      left: 8.5rem;
+    }
+  }
+  .guide {
+    grid-column: 1 / 3;
+    justify-self: center;
+    padding: 2rem;
+    width: max-content;
+    border-radius: 11px;
+    background: #e40a12;
+    box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
+    h1 {
+      margin-bottom: 1rem;
+    }
+  }
+  .is-hidden {
+    display: none;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    .logos {
+      img {
+        padding: 0.7rem;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #f40b16, #cd0913);
+        box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+      }
+    }
+    p {
+      a {
+        color: black;
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 11px;
+        background: linear-gradient(145deg, #f40b16, #cd0913);
+        box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+      }
+    }
+  }
 }

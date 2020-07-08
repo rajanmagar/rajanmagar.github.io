@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 * {
   margin: 0;
@@ -6,13 +7,30 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   height: 100vh;
   background-color: #e40a15;
+  position: relative;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 body header {
   padding: 2rem;
+}
+
+body header h1 {
+  font-family: 'Monoton', cursive;
+  font-size: 2rem;
+  line-height: 111px;
+  text-align: center;
+  color: black;
+  width: 110px;
+  height: 110px;
+  margin: auto;
+  border-radius: 50%;
+  background: #e40a15;
+  -webkit-box-shadow: inset 20px 20px 60px #c20912, inset -20px -20px 60px #ff0c18;
+          box-shadow: inset 20px 20px 60px #c20912, inset -20px -20px 60px #ff0c18;
 }
 
 body section {
@@ -80,6 +98,7 @@ body .container .right-autocomplete .items {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  z-index: 2;
 }
 
 body .container .left-autocomplete .items .item,
@@ -203,7 +222,7 @@ body .container .right-summary .notification .subtitle {
 
 body .container .left-summary .winner::before,
 body .container .right-summary .winner::before {
-  content: "🏆";
+  content: '🏆';
 }
 
 body .container .left-autocomplete .items {
@@ -232,5 +251,41 @@ body .guide h1 {
 
 body .is-hidden {
   display: none;
+}
+
+body footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 11px;
+}
+
+body footer .logos img {
+  padding: 0.7rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f40b16, #cd0913);
+  -webkit-box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+          box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+}
+
+body footer p a {
+  color: black;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 11px;
+  background: linear-gradient(145deg, #f40b16, #cd0913);
+  -webkit-box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+          box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
 }
 /*# sourceMappingURL=style.css.map */
