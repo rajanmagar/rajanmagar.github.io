@@ -9,7 +9,7 @@ body {
   height: 100vh;
   background-color: #e40a15;
   position: relative;
-  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));
   header {
     padding: 2rem;
     h1 {
@@ -46,7 +46,7 @@ body {
         background: #e40a15;
         box-shadow: inset 20px 20px 50px #c20912, inset -20px -20px 40px #ff0c18;
         &::placeholder {
-          color: black;
+          color: #0000004d;
         }
         &:focus {
           outline: none;
@@ -179,14 +179,41 @@ body {
         box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
       }
     }
-    p {
-      a {
-        color: black;
-        text-decoration: none;
-        padding: 1rem;
-        border-radius: 11px;
-        background: linear-gradient(145deg, #f40b16, #cd0913);
-        box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+    > a {
+      color: black;
+      text-decoration: none;
+      padding: 1rem;
+      border-radius: 11px;
+      background: linear-gradient(145deg, #f40b16, #cd0913);
+      box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    section {
+      grid-template-columns: 1fr;
+      .container {
+        .left-autocomplete,
+        .right-autocomplete {
+          .items {
+            width: 70%;
+            left: 3.25rem;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+      .guide {
+        margin: 0 1rem;
+        width: fit-content;
+      }
+    }
+    footer {
+      position: unset;
+      flex-direction: column;
+      p {
+        margin: 1rem 0;
       }
     }
   }

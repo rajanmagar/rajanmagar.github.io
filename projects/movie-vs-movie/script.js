@@ -65,7 +65,6 @@ const onMovieSelect = async (movie, target, side) => {
 const runComparison = () => {
   const leftStat = document.querySelectorAll('.left-summary .notification');
   const rightStat = document.querySelectorAll('.right-summary .notification');
-  console.log('run comparison', leftStat);
   leftStat.forEach((leftItem, index) => {
     const rightItem = rightStat[index];
     const left = parseInt(leftItem.dataset.value);

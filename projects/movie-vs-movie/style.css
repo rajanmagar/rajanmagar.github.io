@@ -11,7 +11,7 @@ body {
   height: 100vh;
   background-color: #e40a15;
   position: relative;
-  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));
 }
 
 body header {
@@ -62,22 +62,22 @@ body .container .right-autocomplete .input {
 
 body .container .left-autocomplete .input::-webkit-input-placeholder,
 body .container .right-autocomplete .input::-webkit-input-placeholder {
-  color: black;
+  color: #0000004d;
 }
 
 body .container .left-autocomplete .input:-ms-input-placeholder,
 body .container .right-autocomplete .input:-ms-input-placeholder {
-  color: black;
+  color: #0000004d;
 }
 
 body .container .left-autocomplete .input::-ms-input-placeholder,
 body .container .right-autocomplete .input::-ms-input-placeholder {
-  color: black;
+  color: #0000004d;
 }
 
 body .container .left-autocomplete .input::placeholder,
 body .container .right-autocomplete .input::placeholder {
-  color: black;
+  color: #0000004d;
 }
 
 body .container .left-autocomplete .input:focus,
@@ -279,7 +279,7 @@ body footer .logos img {
           box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
 }
 
-body footer p a {
+body footer > a {
   color: black;
   text-decoration: none;
   padding: 1rem;
@@ -287,5 +287,34 @@ body footer p a {
   background: linear-gradient(145deg, #f40b16, #cd0913);
   -webkit-box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
           box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+}
+
+@media only screen and (max-width: 768px) {
+  body section {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  body section .container .left-autocomplete .items,
+  body section .container .right-autocomplete .items {
+    width: 70%;
+    left: 3.25rem;
+    border-radius: 0.5rem;
+  }
+  body section .guide {
+    margin: 0 1rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  body footer {
+    position: unset;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body footer p {
+    margin: 1rem 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -6,7 +6,7 @@ const createAutoComplete = ({
   getItems,
 }) => {
   root.innerHTML = `
-    <input type="text" class="input" placeholder="Search..." />
+    <input type="text" class="input" placeholder="Search Movies....." />
     <ul class="items"></ul>
     `;
 
