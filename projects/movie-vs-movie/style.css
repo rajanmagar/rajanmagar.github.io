@@ -300,6 +300,9 @@ body footer > a {
     left: 3.25rem;
     border-radius: 0.5rem;
   }
+  body section .container:nth-child(2) {
+    display: none;
+  }
   body section .guide {
     margin: 0 1rem;
     width: -webkit-fit-content;
