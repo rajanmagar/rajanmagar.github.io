@@ -7,8 +7,10 @@
 body {
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
-  background-color: #e40a15;
-  position: relative;
+  background-color: #272626;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));
   header {
     padding: 2rem;
@@ -17,13 +19,13 @@ body {
       font-size: 2rem;
       line-height: 111px;
       text-align: center;
-      color: black;
+      color: #c2c2c2;
       width: 110px;
       height: 110px;
       margin: auto;
       border-radius: 50%;
-      background: #e40a15;
-      box-shadow: inset 20px 20px 60px #c20912, inset -20px -20px 60px #ff0c18;
+      background: #272626;
+      box-shadow: 20px 20px 31px #212020, -20px -20px 31px #2d2c2c;
     }
   }
   section {
@@ -43,10 +45,10 @@ body {
         font: inherit;
         border: unset;
         border-radius: 50px;
-        background: #e40a15;
-        box-shadow: inset 20px 20px 50px #c20912, inset -20px -20px 40px #ff0c18;
+        background: #272626;
+        box-shadow: 20px 20px 31px #212020, -20px -20px 31px #2d2c2c;
         &::placeholder {
-          color: #0000004d;
+          color: #c2c2c2;
         }
         &:focus {
           outline: none;
@@ -57,8 +59,8 @@ body {
         position: absolute;
         right: 160px;
         list-style: none;
-        border: 1px solid #ff000f;
-        background-color: #e40a17;
+        border: 1px solid #272626;
+        background-color: #272626;
         width: max-content;
         z-index: 2;
         .item {
@@ -90,8 +92,8 @@ body {
         display: flex;
         padding: 2rem;
         border-radius: 11px;
-        background: #e40a15;
-        box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+        background: #272626;
+        box-shadow: 20px 20px 31px #212020, -20px -20px 31px #2d2c2c;
         max-height: 400px;
         .media-left {
           img {
@@ -120,8 +122,8 @@ body {
         padding: 1rem;
         text-align: start;
         border-radius: 11px;
-        background: #e40a12;
-        box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
+        background: #272626;
+        box-shadow: 20px 20px 31px #212020, -20px -20px 31px #2d2c2c;
 
         .title {
           font-size: 1.5rem;
@@ -130,7 +132,7 @@ body {
         .subtitle {
           display: inline;
           font-size: 0.7rem;
-          color: white;
+          color: #c2c2c2;
           background-color: black;
           padding: 0.3rem 1rem;
           border-radius: 7px;
@@ -152,8 +154,9 @@ body {
     padding: 2rem;
     width: max-content;
     border-radius: 11px;
-    background: #e40a12;
-    box-shadow: 20px 20px 60px #c2090f, -20px -20px 60px #ff0c15;
+    background: #272626;
+    box-shadow: 20px 20px 31px #212020, -20px -20px 31px #2d2c2c;
+    color: #c2c2c2;
     h1 {
       margin-bottom: 1rem;
     }
@@ -162,30 +165,27 @@ body {
     display: none;
   }
   footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 11px;
+    color: #c2c2c2;
     .logos {
       img {
         padding: 0.7rem;
         border-radius: 50%;
-        background: linear-gradient(145deg, #f40b16, #cd0913);
-        box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+        background: #272626;
+        box-shadow: 20px 20px 31px #212020, -20px -20px 31px #2d2c2c;
       }
     }
     > a {
-      color: black;
+      color: #c2c2c2;
       text-decoration: none;
       padding: 1rem;
       border-radius: 11px;
-      background: linear-gradient(145deg, #f40b16, #cd0913);
-      box-shadow: 20px 20px 60px #c20912, -20px -20px 60px #ff0c18;
+      background: #272626;
+      box-shadow: 20px 20px 31px #212020, -20px -20px 31px #2d2c2c;
     }
   }
 }
