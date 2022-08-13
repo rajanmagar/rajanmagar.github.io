@@ -63,3 +63,10 @@ section {
 section:first-child {
   grid-column: 1 / 4;
 }
+section:first-child img {
+  width: 21rem;
+  border-radius: 7px;
+}
+section:first-child div {
+  padding: 1rem 3rem;
+}
