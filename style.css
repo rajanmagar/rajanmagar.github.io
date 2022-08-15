@@ -65,6 +65,7 @@ section {
 section:first-child {
   grid-column: 1 / 4;
     display: flex;
+  width: 100%;
 }
 section:first-child img {
   width: 21rem;
