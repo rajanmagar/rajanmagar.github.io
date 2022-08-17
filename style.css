@@ -23,6 +23,7 @@ html, body {
 */
 body {
   line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 a {
