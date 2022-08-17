@@ -71,6 +71,7 @@ section:first-child {
 section:first-child img {
   width: 21rem;
   border-radius: 7px;
+  height: fit-content;
 }
 section:first-child div {
   padding: 1rem 3rem;
