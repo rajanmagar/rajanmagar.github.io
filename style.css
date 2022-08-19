@@ -90,9 +90,13 @@ main section:last-child {
 }
 footer section {
   flex-direction: column;
+  text-align: center;
+  padding: 2rem 0;
 }
 
 footer section ul {
   display: flex;
   justify-content: space-evenly;
+  list-style: none;
+  padding: 2rem 0 0;
 }
