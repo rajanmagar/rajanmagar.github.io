@@ -72,9 +72,9 @@ main {
   justify-items: center;
 }
 section {
-    border-radius: 19px;
+    border-radius: 35px;
     width: 18rem;
-    height: 30rem;
+    height: 35rem;
     padding: 1rem;
     -webkit-box-shadow: 0px 0px 61px -22px rgb(180 210 223 / 75%);
     -moz-box-shadow: 0px 0px 61px -22px rgba(180, 210, 223, 0.75);
@@ -83,10 +83,6 @@ section {
 section:first-child {
   grid-column: 2;
   display: flex;
-  width: 100%;
-}
-section:first-child div {
-  padding: 1rem 3rem;
 }
 section:last-child {
   grid-column: 2;
