@@ -53,10 +53,14 @@ header nav {
   text-align: center;
 }
 
+header nav h1 {
+  font-size: 5rem;
+}
+
 header nav h1::after {
   content: "";
   width: 130px;
-  hieght: 130px;
+  height: 130px;
   background: url("./boy.png") 0 0 no-repeat;
 }
 
