@@ -49,6 +49,17 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
+header nav {
+  text-align: center;
+}
+
+header nav h1::after {
+  content: "";
+  width: 130px;
+  hieght: 130px;
+  background: url("./boy.png") 0 0 no-repeat;
+}
+
 main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
