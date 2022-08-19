@@ -55,6 +55,7 @@ header nav {
 
 header nav h1 {
   font-size: 5rem;
+  position: relative;
 }
 
 header nav h1::after {
@@ -62,6 +63,10 @@ header nav h1::after {
   width: 130px;
   height: 130px;
   background: url("./boy.png") 0 0 no-repeat;
+  position: absolute;
+  top: -6px;
+  right: 295px;
+  background-size: 132px;
 }
 
 main {
