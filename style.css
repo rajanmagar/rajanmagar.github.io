@@ -96,3 +96,12 @@ section:first-child img {
 section:first-child div {
   padding: 1rem 3rem;
 }
+footer section {
+  box-shadow: none;
+  flex-direction: column;
+}
+
+footer section ul {
+  display: flex;
+  justify-content: space-evenly;
+}
