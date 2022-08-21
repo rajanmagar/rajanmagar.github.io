@@ -63,6 +63,10 @@ header nav h1 {
   letter-spacing: -7px;
 }
 
+header nav h1 span {
+  font-weight: 100;
+}
+
 header nav h1::after, header nav h1::before {
     content: "";
     position: absolute;
