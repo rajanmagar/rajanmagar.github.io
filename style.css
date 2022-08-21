@@ -68,7 +68,7 @@ header nav h1::after, header nav h1::before {
 }
 
 header nav h1::before {
-  background: rgba(255,230,230);
+  background: rgb(254 254 254);
   animation: write 2.5s steps(25) 0.5s forwards;
   width: 100%;
 }
@@ -117,7 +117,7 @@ footer section ul {
 }
 
 
-// Keyframes
+/* Keyframes */
 @keyframes write {
   to {
     left: 100%;
