@@ -50,13 +50,17 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 header nav {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
 header nav h1 {
-  padding: 2rem;
-  font-size: 5rem;
+  padding: 2rem 0;
+  font-size: 3rem;
+  width: fit-content;
   position: relative;
+  letter-spacing: -7px;
 }
 
 header nav h1::after, header nav h1::before {
@@ -70,12 +74,13 @@ header nav h1::after, header nav h1::before {
 header nav h1::before {
   background: rgb(254 254 254);
   animation: write 2.5s steps(25) 0.5s forwards;
-  width: 100%;
 }
 
 header nav h1::after {
   opacity: 1;
   width: 0.2em;
+  height: 5rem;
+  top: 52px;
   background: black;
   animation: write 2.5s steps(25) 0.5s forwards, blink 0.75s steps(2) infinite;
 }
