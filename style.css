@@ -57,10 +57,10 @@ header nav {
 
 header nav h1 {
   padding: 2rem 0;
-  font-size: 3rem;
+  font-size: 5rem;
   width: fit-content;
   position: relative;
-  letter-spacing: -7px;
+  letter-spacing: -5px;
 }
 
 header nav h1 span {
