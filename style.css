@@ -78,6 +78,7 @@ header nav h1::after, header nav h1::before {
 header nav h1::before {
   background: rgb(254 254 254);
   animation: write 2.5s steps(25) 0.5s forwards;
+  width: 100%;
 }
 
 header nav h1::after {
