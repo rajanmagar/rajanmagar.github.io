@@ -109,6 +109,9 @@ main section {
 main section:first-child {
   grid-column: 2;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-contents: space-around;
 }
 main section:last-child {
   grid-column: 2;
